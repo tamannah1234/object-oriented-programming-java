@@ -7,6 +7,7 @@ abstract class Vehicle {
     void fuelType() {       // Concrete method
         System.out.println("Most vehicles use fuel or electricity.");
     }
+    abstract void brand();
 }
 
 // Child class 1
@@ -19,6 +20,9 @@ class Car extends Vehicle {
     @Override
     void stop() {
         System.out.println("Car stops with brakes.");
+    }
+    void brand(){
+      System.out.println("BMW");
     }
 }
 
@@ -33,6 +37,10 @@ class Bike extends Vehicle {
     void stop() {
         System.out.println("Bike stops with hand and foot brakes.");
     }
+
+    void brand(){
+        System.out.println("Volvo");
+    }
 }
 
 
@@ -42,13 +50,16 @@ public class Abstraction2 {
         car.start();
         car.fuelType();
         car.stop();
+        car.brand();
 
         System.out.println("----------------------");
 
-        Vehicle bike = new Bike();
+        Bike bike = new Bike();
         bike.start();
        bike.fuelType();
         bike.stop();
+        bike.brand();
+
     }
     
 }
